@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.container--item{
+  display: inline-block;
+  height: 120px;
+  width: 180px;
+  margin-right: 5px;
+  margin-left: 12.5px;
+  margin-top: 5px;
+  background-color: brown;
+  vertical-align: top;
+}
+.container--header{
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-color:#f1c40f;
+}
+.item--pricetag{
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.item--pricetag:after{
+  content: ' HRK';
+}
+.container--category--title{
+  display: inline-block;
+  margin-top: 0;
+  width: 100%;
+  height: 50px;
+  background-color:  #487eb0;
+}
+.add--button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container--category{
+  border: 1px solid black;
+  display: block;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  padding-bottom: 10px;
+  width: 600px;
+}
+form{
+  display: block;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 250px;
+  width: 300px;
+  padding-top: 10px;
+  background-color: brown;
+}
+.login--text{
+  font-size: 13px;
+  text-align: center;
+}
+.login--button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+input[type="text"]{
+  display: block;
+  height: 25px;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+input[type="password"]{
+  display: block;
+  height: 25px;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container--filter{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  width: 600px;
+  height: 50px;
+
+  background-color: #f1c40f;
+}
+select{
+  height: 30px;
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.container--buttons{
+  display: block;
+  float: right;
+}
+h3{
+  display: inline-block;
+  margin-left: 20px;
+  position: relative;
+  bottom: 7px;
+}
+h5{
+  text-align: center;
+  margin-bottom: 5px;
+}
+.header--button{
+  display: inline-block;
+  margin-right: 10px;
+  height: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: transparent;
+  transition: 0.3s;
+  border: 0;
+  font-size: 16px;
+}
+.header--button:hover{
+  background-color: white;
+}
