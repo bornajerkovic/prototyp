@@ -10,8 +10,7 @@ import Cart from "../src/Cart";
 import AdminPanel from "../src/AdminPanel";
 import Listing from "../src/Listing"
 import ResetPassword from "../src/ResetPassword";
-import ErrorPage from "../src/ErrorPage";
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -46,14 +45,15 @@ class App extends Component {
               <Header/>
               <ProductList/>
             </div>
-          } />
+            
+          }
+          />
           <Route path="/login" render={props => <Login></Login>}/>
           <Route path="/register" render={props => <Register></Register>}/>
           <Route path="/details" render={props => <Details></Details>}/>
           <Route path="/cart" render={props => <Cart></Cart>}/>
           <Route path="/listing" render={props =><Listing></Listing>}/>
           <Route path="/resetpassword" render={props =><ResetPassword></ResetPassword>}/>
-          <Route render={props =><ErrorPage></ErrorPage>}/>
           <Route path="/adminpanel" render={props => <AdminPanel></AdminPanel>}/>
         </div> 
       </BrowserRouter>
