@@ -8,5 +8,6 @@ var config = {
     storageBucket: "web-store-1c8b9.appspot.com",
     messagingSenderId: "601137019363"
 };
+
 const fire = firebase.initializeApp(config);
 export default fire;

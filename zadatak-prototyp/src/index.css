@@ -7,18 +7,70 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.num--button{
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 5px;
+  background-color: gainsboro;
+  border: 0;
+  width: 50px;
+  height: 30px;
+  margin-bottom: 10px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+.container--add--item{
+  display:  inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+
+  height: auto;
+  padding-bottom: 10px;
+  width: 300px;
+
+  background-color: #f1c40f;
+}
+.container--change--category{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+
+  height: auto;
+  width: 300px;
+
+  margin-bottom: 10px;
+
+  background-color: red;
+}
+
+
+
+.container--details{
+  display: block;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container--item--title{
+  display: inline-block;
+}
+.cart--price{
+  display: inline-block;
+}
 .container--item{
   display: inline-block;
-  height: 200px;
+  height: auto;
   width: 180px;
   margin-right: 5px;
   margin-left: 12.5px;
   margin-top: 5px;
+  padding-bottom: 10px;
   background-color: rgb(228, 241, 254);
   vertical-align: top;
 }
@@ -86,6 +138,25 @@ code {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+.cart--item{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  height: 100px;
+  box-shadow: 1px 1px grey;
+}
+.cart--button--remove{
+  display: inline-block;
+  width: 100px;
+
+  border: 1px solid transparent;
+ 
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #f1c40f;
+  transition: all 0.3s ease;
 }
 .cart--container{
   display: block;
@@ -202,12 +273,31 @@ textarea{
   display: inline-block;
   overflow: scroll;
 }
+.marko{
+  background-color: pink;
+}
+.container--error{
+  display: block;
+  margin-bottom: 0px;
+  margin-top: 50px;
+}
 .form{
   display: block;
-  margin-top: 150px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   height: 250px;
+  width: 300px;
+  padding-top: 10px;
+  background-color: #f1c40f;
+}
+.form--forgetpassword{
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  padding-bottom: 20px;
   width: 300px;
   padding-top: 10px;
   background-color: #f1c40f;
@@ -229,6 +319,30 @@ textarea{
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
+}
+.input-category{
+  height: 25px;
+  width: 250px;
+  vertical-align: middle;
+}
+.update--button{
+  background-color: seashell;
+  border: 0;
+  height: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.select--default{
+  width: 254px;
+  height: 25px;
+  margin-bottom: 10px;
+}
+.inline--select{
+  width: 170px;
+  height: 30px;
+  display: inline-block;
 }
 input[type="password"]{
   display: block;
@@ -278,6 +392,17 @@ h5{
   border: 0;
   font-size: 16px;
 }
+.header--button--selected{
+  display: inline-block;
+  margin-right: 10px;
+  height: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: white;
+  transition: 0.3s;
+  border: 0;
+  font-size: 16px;
+}
 .header--button:hover{
   background-color: white;
 }
@@ -294,4 +419,33 @@ h5{
 .buttons-div{
   display: block;
   width: 100%;
+}
+.textbox{
+  width: 200px;
+}
+.total{
+  margin-top: 50px;
+  font-size: 22px;
+}
+.total:after{
+  content: ' HRK';
+}
+select{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container--question{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 120px;
+  width: 700px;
+  background-color: #f1c40f;
+}
+.container--question--header{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
 }
