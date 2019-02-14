@@ -25,12 +25,6 @@ export const showDetails = (item) => {
         payload: item
     }
 }
-export const priceFilter = (value) => {
-    return {
-        type: 'FILTER_PRICE',
-        payload: value
-    }
-}
 
 export const incremenet = (item) => {
     return {
@@ -46,13 +40,6 @@ export const decrement = (item) => {
     }
 }
 
-export const filterCategory = (name) => {
-    console.log(name);
-    return {
-        type: 'CATEGORY_FILTER',
-        payload: name
-    }
-}
 
 export const removeCartItem = (item) => {
     //console.log("removed " + item.name);

@@ -16,8 +16,6 @@ export default function (state = [], action) {
             action.payload.num++;
             const finalPrice = oldPrice * action.payload.num;
             action.payload.price = finalPrice;
-            console.log(action.payload);
-            console.log([...state]);
             localStorage.setItem("cart", JSON.stringify([...state]));
             return [...state];
 

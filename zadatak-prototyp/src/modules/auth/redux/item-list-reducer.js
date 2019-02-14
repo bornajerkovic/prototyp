@@ -94,18 +94,6 @@ export default function (state = [], action) {
             localStorage.setItem("all", JSON.stringify(ALL_ITEMS));
             return ALL_ITEMS;
 
-        case 'CATEGORY_FILTER':
-            let loaded = JSON.parse(localStorage.getItem("all"));
-            if (action.payload === "all") {
-                return loaded;
-            }
-            else {
-                loaded = loaded.filter(item => item.category === action.payload);
-                ALL_ITEMS = loaded;
-                return loaded;
-            }
-
-
         case 'ADD_ITEM':
             if (ALL_ITEMS.find(item => item.id === action.payload.id)) {
 

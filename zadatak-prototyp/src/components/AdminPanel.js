@@ -21,15 +21,7 @@ class AdminPanel extends Component {
     }
 
     authListener() {
-        fire.auth().onAuthStateChanged((user) => {
-            if (user) {
-                this.setState(user);
-            }
-            else {
-                this.setState({ user: null });
-            }
-        });
-
+        fire.auth().onAuthStateChanged(user => this.setState({ user: user || null }));
     }
 
     addNewItem = () => {
@@ -43,7 +35,7 @@ class AdminPanel extends Component {
             id: Math.random(),
             name: name.value,
             category: cat.value,
-            price: price.value,
+            price: parseInt(price.value),
             num: 1,
             inCart: false,
             info: info.value
