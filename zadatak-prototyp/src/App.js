@@ -1,18 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./components/Home"
-import Details from "./components/Details";
-import Cart from "./components/Cart"
-import Listing from "./components/Listing"
-import Login from "./components/Login";
-import Register from "./components/Register";
-import NotFound from "./components/NotFound";
-import AdminPanel from "./components/AdminPanel";
-import FAQ from "./components/FAQ";
-import ResetPassword from "./components/ResetPassword";
+import {
+  AdminPanel,
+  Cart,
+  Details,
+  FAQ,
+  Home,
+  Listing,
+  Login,
+  NotFound,
+  Register,
+  ResetPassword
+} from "./views";
 
-import './App.css';
+import "./App.css";
 
 class App extends Component {
   render() {
