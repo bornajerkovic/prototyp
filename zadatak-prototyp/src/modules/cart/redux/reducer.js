@@ -11,32 +11,21 @@ export default function(state = [], action) {
       return [...state];
 
     case "INCREMENT":
-      const oldPrice = action.payload.price / action.payload.num;
-      action.payload.num++;
-      const finalPrice = oldPrice * action.payload.num;
-      action.payload.price = finalPrice;
       localStorage.setItem("cart", JSON.stringify([...state]));
       return [...state];
 
     case "DECREMENT":
-      const price = action.payload.price / action.payload.num;
-      if (action.payload.num !== 1) {
-        action.payload.num -= 1;
-        const newPrice = price * action.payload.num;
-        action.payload.price = newPrice;
-        localStorage.setItem("cart", JSON.stringify([...state]));
-        return [...state];
-      }
+      localStorage.setItem("cart", JSON.stringify([...state]));
+      return [...state];
+
     default:
       const loadedItems = JSON.parse(localStorage.getItem("cart"));
-
-      if (loadedItems === null || loadedItems === "[]" || loadedItems === "") {
-      } else {
-        if (state.length === loadedItems.length) {
-        } else {
+      if (loadedItems) {
+        if (state.length !== loadedItems.length) {
           loadedItems.forEach(item => {
             state = [...state, item];
             localStorage.setItem("cart", JSON.stringify([...state]));
+            return state;
           });
         }
       }

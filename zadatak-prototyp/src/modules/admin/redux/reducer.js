@@ -1,38 +1,49 @@
-export default function(state = [], action) {
+import ALL_ITEMS from "../../../res/item-list.js";
+
+function setCategories() {
+  if (!JSON.parse(localStorage.getItem("categories"))) {
+    let categories = [];
+    ALL_ITEMS.map(item => {
+      categories = [...categories, item.category];
+    });
+
+    categories = Array.from(new Set(categories));
+    localStorage.setItem("categories", JSON.stringify(categories));
+  }
+}
+
+export default function(state = ALL_ITEMS, action) {
   switch (action.type) {
     case "REMOVE_ITEM":
-      let loadItems = JSON.parse(localStorage.getItem("all"));
-      ALL_ITEMS = loadItems;
-      ALL_ITEMS = ALL_ITEMS.filter(item => item.name !== action.payload);
-      localStorage.setItem("all", JSON.stringify(ALL_ITEMS));
-      return ALL_ITEMS;
+      state = state.filter(item => item.name !== action.payload);
+      return state;
 
     case "ADD_ITEM":
-      if (ALL_ITEMS.find(item => item.id === action.payload.id)) {
-      } else {
-        ALL_ITEMS = [...ALL_ITEMS, action.payload];
-        localStorage.setItem("all", JSON.stringify(ALL_ITEMS));
-        return ALL_ITEMS;
+      if (!state.find(item => item.id === action.payload.id)) {
+        state = [...state, action.payload];
+        return state;
       }
 
     case "CHANGE_CATEGORY":
-      const itemToFind = ALL_ITEMS.find(
-        item => item.name === action.payload.name
-      );
+      const itemToFind = state.find(item => item === action.payload.item);
       itemToFind.category = action.payload.newCategory;
-      localStorage.setItem("all", JSON.stringify(ALL_ITEMS));
-      return ALL_ITEMS;
+      return state;
 
     case "ADD_CATEGORY":
-      const newCategory = action.payload;
-      const allCategories = JSON.parse(localStorage.getItem("categories"));
-      if (!allCategories.find(item => item === newCategory)) {
-        let cleanItem = [];
-        cleanItem = allCategories;
-        cleanItem = [...cleanItem, newCategory];
-        localStorage.setItem("categories", JSON.stringify(cleanItem));
+      if (
+        !JSON.parse(localStorage.getItem("categories")).find(
+          item => item === action.payload
+        )
+      ) {
+        let newCategories = [
+          ...JSON.parse(localStorage.getItem("categories")),
+          action.payload
+        ];
+        localStorage.setItem("categories", JSON.stringify(newCategories));
       }
+
     default:
-      return ALL_ITEMS;
+      setCategories();
+      return state;
   }
 }

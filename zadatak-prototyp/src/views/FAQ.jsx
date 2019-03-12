@@ -6,7 +6,7 @@ class FAQ extends Component {
     return (
       <div>
         <Header />
-        <div class="container--question">
+        <div className="container--question">
           <div className="container--question--header">
             <h2>How long does it take to deliver the product ?</h2>
           </div>
@@ -16,7 +16,7 @@ class FAQ extends Component {
           </div>
         </div>
 
-        <div class="container--question">
+        <div className="container--question">
           <div className="container--question--header">
             <h2>How can I manage items ?</h2>
           </div>
@@ -26,7 +26,7 @@ class FAQ extends Component {
           </div>
         </div>
 
-        <div class="container--question">
+        <div className="container--question">
           <div className="container--question--header">
             <h2>Where is my Cart saved ?</h2>
           </div>

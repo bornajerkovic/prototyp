@@ -7,7 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.num--button{
+.num--button {
   display: inline-block;
   padding-left: 10px;
   padding-right: 10px;
@@ -23,9 +23,15 @@ code {
     monospace;
 }
 
+mark {
+  background-color: transparent;
+  font-size: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
-.container--add--item{
-  display:  inline-block;
+.container--add--item {
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;
@@ -36,7 +42,7 @@ code {
 
   background-color: #f1c40f;
 }
-.container--change--category{
+.container--change--category {
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
@@ -49,21 +55,19 @@ code {
   background-color: red;
 }
 
-
-
-.container--details{
+.container--details {
   display: block;
   width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
-.container--item--title{
+.container--item--title {
   display: inline-block;
 }
-.cart--price{
+.cart--price {
   display: inline-block;
 }
-.container--item{
+.container--item {
   display: inline-block;
   height: auto;
   width: 180px;
@@ -74,41 +78,41 @@ code {
   background-color: rgb(228, 241, 254);
   vertical-align: top;
 }
-.container--header{
+.container--header {
   display: block;
   width: 100%;
   height: 50px;
-  background-color:#f1c40f;
+  background-color: #f1c40f;
 }
-.item--pricetag{
+.item--pricetag {
   margin-top: 10px;
   text-align: center;
   margin-bottom: 10px;
 }
-.item--pricetag:after{
-  content: ' HRK';
+.item--pricetag:after {
+  content: " HRK";
 }
-.container--category--title{
+.container--category--title {
   display: inline-block;
   margin-top: 0;
   width: 100%;
   height: 50px;
-  background-color:  #487eb0;
+  background-color: #487eb0;
 }
-.add--button{
+.add--button {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 100px;
 
   border: 1px solid transparent;
- 
+
   padding-left: 10px;
   padding-right: 10px;
   background: #f1c40f;
   transition: all 0.3s ease;
 }
-.add--item--form{
+.add--item--form {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -119,27 +123,27 @@ code {
   padding-bottom: 20px;
 }
 
-.add--button--form{
+.add--button--form {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 100px;
 
   border: 1px solid transparent;
- 
+
   padding-left: 10px;
   padding-right: 10px;
   margin-top: 15px;
   background: white;
   transition: all 0.3s ease;
 }
-.container--back--buttons{
+.container--back--buttons {
   width: 230px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-.cart--item{
+.cart--item {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -147,24 +151,24 @@ code {
   height: 100px;
   box-shadow: 1px 1px grey;
 }
-.cart--button--remove{
+.cart--button--remove {
   display: inline-block;
   width: 100px;
 
   border: 1px solid transparent;
- 
+
   padding-left: 10px;
   padding-right: 10px;
   background: #f1c40f;
   transition: all 0.3s ease;
 }
-.cart--container{
+.cart--container {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 800px;
 }
-.info{
+.info {
   width: 300px;
   display: block;
   margin-left: auto;
@@ -172,42 +176,42 @@ code {
 
   text-align: justify;
 }
-.detail--title{
+.detail--title {
   text-align: center;
 }
-.add--button:hover{
+.add--button:hover {
   background: #f19e0f;
 }
-.container--additem{
+.container--additem {
   display: inline-block;
   float: right;
   margin-right: 70px;
 }
-.container--change--category{
+.container--change--category {
   display: block;
   height: 100px;
   width: 600px;
   background-color: #f1c40f;
 }
-.inline--button{
-  display:inline-block;
+.inline--button {
+  display: inline-block;
   margin-top: 20px;
   margin-left: 17px;
   border: 0;
   padding: 10px;
 }
-.inline--textbox{
-  display:block;
+.inline--textbox {
+  display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
   margin-bottom: 7px;
 }
-.inline{
-  display:block;
+.inline {
+  display: block;
   text-align: center;
 }
-.container--add--form{
+.container--add--form {
   display: block;
   height: 25px;
   width: 250px;
@@ -216,29 +220,29 @@ code {
   margin-bottom: 10px;
   padding-left: 7px;
 }
-.hidden--button{
+.hidden--button {
   display: none;
 }
-textarea{
+textarea {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 250px;
   height: 100px;
 }
-.details--button{
+.details--button {
   display: block;
   width: 100px;
   margin-left: auto;
   margin-right: auto;
 
   border: 1px solid transparent;
-  
+
   padding-left: 20px;
   padding-right: 20px;
   background-color: white;
 }
-.container--category{
+.container--category {
   border: 1px solid black;
   display: block;
   margin-top: 15px;
@@ -248,7 +252,7 @@ textarea{
   padding-bottom: 10px;
   width: 600px;
 }
-.category--button{
+.category--button {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -257,31 +261,31 @@ textarea{
   transition: all 0.3s ease;
   width: 200px;
 }
-.category--button:hover{
+.category--button:hover {
   background-color: white;
 }
-.container--display--products{
+.container--display--products {
   display: inline-block;
   width: 70%;
   height: auto;
   vertical-align: top;
 }
-.container--sidebar{
+.container--sidebar {
   height: 500px;
   width: 220px;
   background-color: #f19e0f;
   display: inline-block;
   overflow: scroll;
 }
-.marko{
+.marko {
   background-color: pink;
 }
-.container--error{
+.container--error {
   display: block;
   margin-bottom: 0px;
   margin-top: 50px;
 }
-.form{
+.form {
   display: block;
   margin-top: 20px;
   margin-left: auto;
@@ -291,7 +295,7 @@ textarea{
   padding-top: 10px;
   background-color: #f1c40f;
 }
-.form--forgetpassword{
+.form--forgetpassword {
   display: block;
   margin-top: 20px;
   margin-left: auto;
@@ -302,17 +306,17 @@ textarea{
   padding-top: 10px;
   background-color: #f1c40f;
 }
-.login--text{
+.login--text {
   font-size: 13px;
   text-align: center;
 }
-.login--button{
+.login--button {
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
 }
-.form--textbox{
+.form--textbox {
   display: block;
   height: 25px;
   width: 250px;
@@ -320,12 +324,12 @@ textarea{
   margin-right: auto;
   margin-bottom: 10px;
 }
-.input-category{
+.input-category {
   height: 25px;
   width: 250px;
   vertical-align: middle;
 }
-.update--button{
+.update--button {
   background-color: seashell;
   border: 0;
   height: 30px;
@@ -334,24 +338,24 @@ textarea{
   margin-left: 5px;
   vertical-align: middle;
 }
-.select--default{
+.select--default {
   width: 254px;
   height: 25px;
   margin-bottom: 10px;
 }
-.inline--select{
+.inline--select {
   width: 170px;
   height: 30px;
   display: inline-block;
 }
-input[type="password"]{
+input[type="password"] {
   display: block;
   height: 25px;
   width: 250px;
   margin-left: auto;
   margin-right: auto;
 }
-.container--filter{
+.container--filter {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -361,27 +365,27 @@ input[type="password"]{
 
   background-color: #f1c40f;
 }
-select{
+select {
   height: 30px;
   width: 200px;
   margin-top: 10px;
   margin-left: 20px;
 }
-.container--buttons{
+.container--buttons {
   display: block;
   float: right;
 }
-h3{
+h3 {
   display: inline-block;
   margin-left: 20px;
   position: relative;
   bottom: 7px;
 }
-h5{
+h5 {
   text-align: center;
   margin-bottom: 5px;
 }
-.header--button{
+.header--button {
   display: inline-block;
   margin-right: 10px;
   height: 50px;
@@ -392,7 +396,7 @@ h5{
   border: 0;
   font-size: 16px;
 }
-.header--button--selected{
+.header--button--selected {
   display: inline-block;
   margin-right: 10px;
   height: 50px;
@@ -403,39 +407,39 @@ h5{
   border: 0;
   font-size: 16px;
 }
-.header--button:hover{
+.header--button:hover {
   background-color: white;
 }
-.title{
+.title {
   text-align: center;
   font-size: 17px;
 }
-.price{
+.price {
   text-align: center;
 }
-.price::after{
+.price::after {
   content: " HRK";
 }
-.buttons-div{
+.buttons-div {
   display: block;
   width: 100%;
 }
-.textbox{
+.textbox {
   width: 200px;
 }
-.total{
+.total {
   margin-top: 50px;
   font-size: 22px;
 }
-.total:after{
-  content: ' HRK';
+.total:after {
+  content: " HRK";
 }
-select{
+select {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-.container--question{
+.container--question {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -443,33 +447,32 @@ select{
   width: 700px;
   background-color: #f1c40f;
 }
-.container--question--header{
+.container--question--header {
   display: block;
   margin-left: auto;
   margin-right: auto;
   background-color: transparent;
 }
 
-
-input[type=range] {
+input[type="range"] {
   -webkit-appearance: none;
   width: 310px;
   height: 50px;
   overflow: hidden;
   cursor: pointer;
 }
-input[type=range]:before {
-  content: '0';
+input[type="range"]:before {
+  content: "0";
   color: black;
 }
-input[type=range]:after {
-  content: '10000';
+input[type="range"]:after {
+  content: "10000";
   color: black;
 }
-input[type=range]:focus {
+input[type="range"]:focus {
   outline: none;
 }
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 11.1px;
   cursor: pointer;
@@ -478,7 +481,7 @@ input[type=range]::-webkit-slider-runnable-track {
   border-radius: 6.7px;
   border: 0px solid #000001;
 }
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   box-shadow: 3.5px 3.5px 7.4px #000000, 0px 0px 3.5px #0d0d0d;
   border: 0.1px solid #000000;
   height: 26px;
@@ -489,9 +492,9 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -11.95px;
 }
-input[type=range]:focus::-webkit-slider-runnable-track {
+input[type="range"]:focus::-webkit-slider-runnable-track {
   background: #61c0ff;
 }
-input[type=range]:focus {
+input[type="range"]:focus {
   outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
 }

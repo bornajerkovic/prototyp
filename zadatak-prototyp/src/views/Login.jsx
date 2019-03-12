@@ -19,31 +19,26 @@ class Login extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
     fire
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then(u => {
-        window.open("/", "_self");
+        this.props.history.push("/");
       })
       .catch(error => {
         this.setState({
-          errorMsg: error.message
+          errorMsg: "ERROR :" + error.message
         });
       });
   };
-
-  showError() {
-    if (this.state.errorMsg !== "") {
-      return <p>ERROR: {this.state.errorMsg}</p>;
-    }
-  }
 
   render() {
     return (
       <div>
         <Header />
-        <div className="container--error">{this.showError()}</div>
+        <div className="container--error">
+          <p>{this.state.errorMsg}</p>
+        </div>
 
         <form onSubmit={this.handleSubmit} className="form">
           <h3>Login</h3>

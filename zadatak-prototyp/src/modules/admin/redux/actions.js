@@ -1,5 +1,4 @@
 export const addItem = item => {
-  console.log("adding");
   return {
     type: "ADD_ITEM",
     payload: item

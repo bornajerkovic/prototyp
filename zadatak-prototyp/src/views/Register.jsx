@@ -19,7 +19,6 @@ class Register extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
     fire
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
@@ -28,29 +27,24 @@ class Register extends Component {
           errorMsg: "E-mail has been sent to you for further details"
         });
         setTimeout(() => {
-          window.open("/", "_self");
+          this.props.history.push("/");
         }, 1500);
-        //window.open("/", "_self");
       })
       .catch(error => {
         this.setState({
-          errorMsg: error.message
+          errorMsg: "MESSAGE: " + error.message
         });
       });
   };
-
-  showError() {
-    if (this.state.errorMsg !== "") {
-      return <p>MESSAGE: {this.state.errorMsg}</p>;
-    }
-  }
 
   render() {
     return (
       <div>
         <Header />
 
-        <div className="container--error">{this.showError()}</div>
+        <div className="container--error">
+          <p>{this.state.errorMsg}</p>
+        </div>
 
         <form onSubmit={this.handleSubmit} className="form">
           <h3>Register</h3>

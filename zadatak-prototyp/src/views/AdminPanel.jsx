@@ -9,16 +9,20 @@ import {
   changeCategory,
   addCategory,
   removeItem
-} from "../modules/admin/redux/actions";
+} from "../modules/admin/redux/";
 
 class AdminPanel extends Component {
   state = {
-    name: undefined,
-    cat: undefined,
-    price: undefined,
-    info: undefined,
     message: undefined,
     user: {},
+
+    newItemName: undefined,
+    newItemCat: undefined,
+    newItemPrice: undefined,
+    newItemInfo: undefined,
+
+    selectItem: undefined,
+    changedCat: undefined,
 
     oldCategory: undefined,
     newCategory: undefined,
@@ -37,135 +41,94 @@ class AdminPanel extends Component {
   }
 
   showMessage() {
-    return this.state.message ? (
-      <p>
-        <strong>{this.state.message}</strong>
-      </p>
-    ) : null;
+    const { message } = this.state;
+    return <p>{message}</p>;
   }
 
   addNewItem = () => {
-    console.log(this.state);
-
+    const { newItemName, newItemCat, newItemPrice, newItemInfo } = this.state;
     let newItem = {
       id: Math.random(),
-      name: this.state.name,
-      category: this.state.cat,
-      price: parseInt(this.state.price),
+      name: newItemName,
+      category: newItemCat,
+      price: parseInt(newItemPrice),
       num: 1,
       inCart: false,
-      info: this.state.info
+      info: newItemInfo
     };
 
-    if (this.state.name && this.state.price && this.state.info) {
+    if (newItemName && newItemInfo && newItemPrice) {
       this.refs.name.value = "";
       this.refs.price.value = "";
       this.refs.info.value = "";
 
-      this.props.addItem(newItem);
-      this.setState({ message: "Item added successfully" }, this.showMessage());
-    }
-
-    this.setState({ message: "Invalid input" }, this.showMessage());
-  };
-  removeDupicated(arr) {
-    let unique = {};
-    arr.forEach(function(i) {
-      if (!unique[i]) {
-        unique[i] = true;
+      if (newItem.category === undefined) {
+        newItem.category = "laptops";
       }
-    });
-    return Object.keys(unique);
-  }
+
+      this.props.addItem(newItem);
+      this.setState({ message: "Item added successfully" });
+    } else {
+      this.setState({ message: "Invalid input" });
+    }
+  };
 
   displayCategories() {
-    let allCategories = JSON.parse(localStorage.getItem("all"));
-    let newNesto = [];
-    allCategories.forEach(item => {
-      newNesto = [...newNesto, item.category];
-    });
-
-    const cleanAllCategories = Array.from(new Set(newNesto));
-    console.log(cleanAllCategories);
-    return cleanAllCategories.map(item => {
-      return (
-        <option key={item} value={item}>
-          {item}
-        </option>
-      );
-    });
+    return JSON.parse(localStorage.getItem("categories")).map(item => (
+      <option key={item} value={item}>
+        {item}
+      </option>
+    ));
   }
 
   displayItems() {
-    const it = JSON.parse(localStorage.getItem("all"));
-    return it.map(item => {
-      return (
-        <option key={item.id} value={item.name}>
-          {item.name}
-        </option>
-      );
-    });
+    return this.props.items.map(item => (
+      <option key={item.id} value={item.name}>
+        {item.name}
+      </option>
+    ));
   }
+
   updateCategory = () => {
-    const name = document.getElementById("select-items").value;
-    const newCategory = document.getElementById("select--category").value;
+    const name = this.state.selectItem;
+    let newCategory = this.state.changedCat;
+
+    let item = this.props.items.find(item => item.name === name);
+
+    if (!item) {
+      item = this.props.items[0];
+    }
+    if (!newCategory) {
+      newCategory = "laptops";
+    }
 
     const replaceObject = {
-      name: name,
+      item: item,
       newCategory: newCategory
     };
 
-    let all_items = JSON.parse(localStorage.getItem("all"));
-
-    const findItem = all_items.find(item => item.name === name);
-
-    //ZARJESIT
-    if (findItem.category === newCategory) {
-      this.setState(
-        { message: "Item is aready in that category" },
-        this.showMessage()
-      );
-    }
-
     this.props.changeCategory(replaceObject);
-    this.setState(
-      { message: "Item is aready in that category" },
-      this.showMessage()
-    );
-    //----------------
+    this.setState({ message: "Item category updated" });
   };
 
   addNewCategory = () => {
-    //let newCat = document.getElementById("input-category").value;
-
-    //document.getElementById("category-message").innerHTML =
-    //"<strong>Category Added Sucessfully</strong>";
-    //document.getElementById("input-category").value = "";
-
     let newCat = this.state.addCat;
     this.props.addCategory(newCat);
     this.refs.newcategory.value = "";
+    this.setState({ message: "Category successfully added" });
   };
-
-  show(g) {
-    if (g === 0) {
-    } else {
-      return <h3>Item removed</h3>;
-    }
-  }
 
   removeItem = () => {
-    //let itemName = document.getElementById("select-remove").value;
-    //document.getElementById("remove-message").innerHTML =
-    //"<strong>Item Removed Successfully</strong>";
     let itemName = this.state.removeItem;
     this.props.removeItem(itemName);
-    this.show(5);
+    this.setState({ message: "Item removed Successfully !" });
   };
+
   updateInput(e) {
     const newVal = e.target.value;
-    this.setState({ [e.target.id]: newVal });
+    this.setState({ [e.target.id]: e.target.value });
   }
+
   render() {
     return this.state.user ? (
       <div>
@@ -175,7 +138,7 @@ class AdminPanel extends Component {
           <p id="add-message" />
           <h2>Add Item</h2>
           <input
-            id="name"
+            id="newItemName"
             ref="name"
             type="text"
             placeholder="Item Name"
@@ -184,14 +147,14 @@ class AdminPanel extends Component {
           />
 
           <select
-            id="cat"
+            id="newItemCat"
             className="select--default"
             onChange={this.updateInput.bind(this)}
           >
             {this.displayCategories()}
           </select>
           <input
-            id="price"
+            id="newItemPrice"
             ref="price"
             type="number"
             className="form--textbox"
@@ -199,7 +162,7 @@ class AdminPanel extends Component {
             onChange={this.updateInput.bind(this)}
           />
           <textarea
-            id="info"
+            id="newItemInfo"
             ref="info"
             onChange={this.updateInput.bind(this)}
             placeholder="Item Info"
@@ -207,19 +170,23 @@ class AdminPanel extends Component {
           <button onClick={this.addNewItem}>Add</button>
         </div>
 
-        <p id="change-message" />
-
         <div className="container--change--category">
           <h2>Change Category</h2>
           <select
-            id="select-items"
+            id="selectItem"
             className="inline--select"
             placeholder="Select Item"
+            onChange={this.updateInput.bind(this)}
+            value="laptops"
           >
             {this.displayItems()}
           </select>
 
-          <select id="select--category" className="inline--select">
+          <select
+            id="changedCat"
+            className="inline--select"
+            onChange={this.updateInput.bind(this)}
+          >
             {this.displayCategories()}
           </select>
 
@@ -247,7 +214,6 @@ class AdminPanel extends Component {
 
         <p id="remove-message" />
 
-        {this.show(0)}
         <div className="container--change--category">
           <h2>Remove Item</h2>
           <select
@@ -272,9 +238,7 @@ class AdminPanel extends Component {
 function mapStateToProps(state) {
   return {
     items: state.items,
-    allItems: state.allItems,
-    cart: state.cart,
-    details: state.details
+    cart: state.cart
   };
 }
 

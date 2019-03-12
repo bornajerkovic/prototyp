@@ -1,4 +1,4 @@
-export let ALL_ITEMS = [
+let ALL_ITEMS = [
   {
     id: 1,
     name: "Asus Laptop",
@@ -168,3 +168,5 @@ export let ALL_ITEMS = [
       nascetur ridiculus mus.`
   }
 ];
+
+export default ALL_ITEMS;
